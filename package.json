@@ -1,0 +1,56 @@
+{
+  "name": "rpc-provider",
+  "version": "1.0.0",
+  "description": "RPC provider abstraction for Alchemy and custom RPC proxy services. Works with viem and Hardhat 3.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "rpc",
+    "ethereum",
+    "alchemy",
+    "viem",
+    "hardhat",
+    "web3",
+    "blockchain",
+    "provider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/symbiosis-finance/rpc-provider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/symbiosis-finance/rpc-provider/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc --build .",
+    "clean": "rimraf dist",
+    "test": "node --import tsx/esm --test \"test/**/*.test.ts\"",
+    "prepare": "pnpm run clean && pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.x",
+    "rimraf": "^6.1.0",
+    "tsx": "^4.19.3",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "memoize-fs": "^4.1.1"
+  },
+  "packageManager": "pnpm@10.28.1"
+}
