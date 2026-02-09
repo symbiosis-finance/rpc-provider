@@ -1,4 +1,4 @@
-# rpc-provider
+# @symbiosis-finance/rpc-provider
 
 RPC provider abstraction for Ethereum and EVM-compatible chains. Supports Alchemy and custom RPC proxy services.
 
@@ -7,7 +7,7 @@ Works with [viem](https://viem.sh/) and [Hardhat 3](https://hardhat.org/).
 ## Installation
 
 ```bash
-pnpm add rpc-provider
+pnpm add @symbiosis-finance/rpc-provider@github:symbiosis-finance/rpc-provider
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ pnpm add rpc-provider
 ### Alchemy Provider
 
 ```typescript
-import { AlchemyRpcProvider } from 'rpc-provider'
+import { AlchemyRpcProvider } from '@symbiosis-finance/rpc-provider'
 
 const provider = await AlchemyRpcProvider.create('your-alchemy-api-key')
 
@@ -33,7 +33,7 @@ const arbUrl = provider.urlForChain(42161)
 For custom RPC proxy services that route requests by chain ID:
 
 ```typescript
-import { RpcProxyProvider } from 'rpc-provider'
+import { RpcProxyProvider } from '@symbiosis-finance/rpc-provider'
 
 const provider = new RpcProxyProvider('https://my-rpc-proxy.com')
 
@@ -47,7 +47,7 @@ const url = provider.urlForChain(56)
 ```typescript
 import { createPublicClient, http } from 'viem'
 import { mainnet } from 'viem/chains'
-import { AlchemyRpcProvider } from 'rpc-provider'
+import { AlchemyRpcProvider } from '@symbiosis-finance/rpc-provider'
 
 const rpcProvider = await AlchemyRpcProvider.create('your-alchemy-api-key')
 
@@ -62,7 +62,7 @@ const client = createPublicClient({
 Query Alchemy's supported networks:
 
 ```typescript
-import { AlchemyNetworksInfo } from 'rpc-provider'
+import { AlchemyNetworksInfo } from '@symbiosis-finance/rpc-provider'
 
 // Get block explorer URL for a chain
 const explorerUrl = await AlchemyNetworksInfo.explorerUrl(1)
