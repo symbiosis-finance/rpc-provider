@@ -1,5 +1,5 @@
 {
-  "name": "rpc-provider",
+  "name": "@symbiosis-finance/rpc-provider",
   "version": "1.0.0",
   "description": "RPC provider abstraction for Alchemy and custom RPC proxy services. Works with viem and Hardhat 3.",
   "license": "MIT",
